@@ -1,5 +1,5 @@
 const MockPage = () => {
-  return <p>hello to home page</p>;
+  return <p>hello from mock page</p>;
 };
 
 export default MockPage;

@@ -1,0 +1,70 @@
+.balance {
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.current-balance {
+  display: flex;
+  align-items: center;
+}
+
+.change-balance-icon-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.balance-icon {
+  width: 80px;
+  height: 80px;
+}
+
+.balance-count {
+  margin-left: 20px;
+}
+
+.balance-count-title {
+  color: #000;
+  font-size: 16px;
+}
+
+.balance-count-number {
+  color: #000;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.add-stonks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.add-stonks-icon-container {
+  width: 50px;
+  height: 50px;
+  background-color: #007bff; /* заменил colors.blue */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plus {
+  font-size: 35px;
+  color: white;
+  line-height: 1;
+}
+
+.add-stonks-title {
+  margin-top: 3px;
+  font-size: 16px;
+  color: #000;
+}
