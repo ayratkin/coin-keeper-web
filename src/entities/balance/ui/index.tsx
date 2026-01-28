@@ -30,7 +30,7 @@ const Balance: React.FC = () => {
           <img src={tinkoffLogo} alt="Tinkoff" className="balance-icon" />
         </button>
         <div className="balance-count">
-          <p className="balance-count-title">Баланс:</p>
+          <p className="balance-count-title">Балансс:</p>
           {loading ? (
             <CircularProgress size={20} />
           ) : (
