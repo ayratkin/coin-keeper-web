@@ -1,11 +1,14 @@
 name: GitHub Actions Demo
+
 on: [push]
+
 jobs:
   init:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [20.x]
+        
     steps:
      - uses: actions/checkout@v3
      - name: Starting Node.js ${{ matrix.node-version}}
