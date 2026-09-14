@@ -1,0 +1,11 @@
+.costsContent {
+    margin-top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.costs {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}

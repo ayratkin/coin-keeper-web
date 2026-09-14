@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import tinkoffLogo from "../../../assets/img/tinkoff.png";
-import "./styles.css";
+import styles from "./styles.module.css";
 import type { TBalanceResponse } from "../model";
 import { CircularProgress } from "@mui/material";
 
 const Balance: React.FC = () => {
   const [loading, setLoading] = useState(false);
-  const [balance, setBalance] = useState<string>();
+  const [balance, setBalance] = useState<string>("500");
 
   useEffect(() => {
     setLoading(true);
@@ -17,35 +16,24 @@ const Balance: React.FC = () => {
       .then((data: TBalanceResponse) => {
         setBalance(data.balance);
       })
+      .catch((e) => {
+        console.log(e.message);
+      })
       .finally(() => {
-        console.log(123);
         setLoading(false);
       });
   }, []);
 
   return (
-    <div className="balance">
-      <div className="current-balance">
-        <button className="change-balance-icon-btn">
-          <img src={tinkoffLogo} alt="Tinkoff" className="balance-icon" />
-        </button>
-        <div className="balance-count">
-          <p className="balance-count-title">Балансс:</p>
-          {loading ? (
-            <CircularProgress size={20} />
-          ) : (
-            <p className="balance-count-number">{balance}</p>
-          )}
-        </div>
+    <div className={styles.balance}>
+      <div className={styles.balanceCount}>
+        <p className={styles.balanceCountTitle}>Баланс:</p>
+        {loading ? (
+          <CircularProgress size={20} />
+        ) : (
+          <p className={styles.balanceCountNumber}>{balance}</p>
+        )}
       </div>
-
-      <button className="add-stonks">
-        <div className="add-stonks-icon-container">
-          <span className="plus">+</span>
-          {/* <img src={plusButton} alt="Добавить" className="add-stonks-icon" /> */}
-        </div>
-        <p className="add-stonks-title">Доход</p>
-      </button>
     </div>
   );
 };

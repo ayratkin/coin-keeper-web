@@ -1,0 +1,28 @@
+.balance {
+  display: inline-flex;
+  min-width: 120px;
+  min-height: 120px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+
+.balanceCount {
+  text-align: center;
+}
+
+
+.balanceCountTitle {
+  color: #000;
+  font-size: 18px;
+  line-height: 10px;
+}
+
+.balanceCountNumber {
+  color: #000;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 10px;
+}
+
+

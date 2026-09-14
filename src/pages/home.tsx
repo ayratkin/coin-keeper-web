@@ -1,11 +1,12 @@
-import Balance from "../entities/balance/ui";
+import Costs from "../widgets/costs";
+import { Header } from "../widgets/header/ui";
 
 const HomePage = () => {
   return (
-    <>
-      <Balance />
-      <p>hello from home page</p>;
-    </>
+    <div>
+      <Header />
+      <Costs />
+    </div>
   );
 };
 
