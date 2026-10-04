@@ -1,5 +1,5 @@
-import { Costs } from "../widgets/costs";
-import { Header } from "../widgets/header/ui";
+import { Costs } from "@/widgets/costs";
+import { Header } from "@/widgets/header/ui";
 
 const HomePage = () => {
   return (

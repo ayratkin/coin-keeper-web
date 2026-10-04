@@ -1,14 +1,15 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 import type { TBalanceResponse } from "../model";
 import { CircularProgress } from "@mui/material";
 
 const Balance: React.FC = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [balance, setBalance] = useState<string>("500");
 
   useEffect(() => {
-    setLoading(true);
     fetch("http://localhost:3010/api/balance")
       .then((response) => {
         return response.json();

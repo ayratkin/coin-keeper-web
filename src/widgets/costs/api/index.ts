@@ -1,4 +1,4 @@
-import type { TCost } from "../../../entities/cost";
+import type { TCost } from "@/entities/cost";
 
 export const MOCK_COSTS: TCost[] = [
   {
