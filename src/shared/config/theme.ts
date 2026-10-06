@@ -46,5 +46,21 @@ export const theme = createTheme({
     MuiButton: {
       defaultProps: { disableElevation: true },
     },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        input: ({ theme }) => {
+          // Убираем заливку автозаполнения браузера (в тёмной теме MUI красит её в синий)
+          const autofill = {
+            WebkitBoxShadow: `0 0 0 100px ${theme.vars.palette.background.paper} inset`,
+            WebkitTextFillColor: theme.vars.palette.text.primary,
+            caretColor: theme.vars.palette.text.primary,
+          };
+          return {
+            "&:-webkit-autofill": autofill,
+            [theme.getColorSchemeSelector("dark")]: { "&:-webkit-autofill": autofill },
+          };
+        },
+      },
+    },
   },
 });
