@@ -1,5 +1,5 @@
-export type TBalanceResponse = {
-  balanceName: string;
-  balance: string;
-  currency: string;
+export type TPlaneBalance = {
+  /** Сумма запланированных трат. */
+  amount: number;
+  title: string;
 };

@@ -1,0 +1,1 @@
+export { CategoryExpenses } from "./ui";

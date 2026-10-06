@@ -1,26 +1,24 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import styles from "./styles.module.css";
-import type { TBalanceResponse } from "../model";
-import { Card, CircularProgress } from "@mui/material";
+import EventNoteRounded from "@mui/icons-material/EventNoteRounded";
+import { formatMoney } from "@/shared/lib/format";
+import { StatCard } from "@/shared/ui";
+import type { TPlaneBalance } from "../model";
 
-const Balance: React.FC = () => {
-  const [loading, setLoading] = useState(false);
-  const [balance, setBalance] = useState<string>("500");
+type TProps = {
+  plane: TPlaneBalance;
+};
 
+const PlaneBalance = ({ plane }: TProps) => {
   return (
-    <div className={styles.balance}>
-      <div className={styles.balanceCount}>
-        <p className={styles.balanceCountTitle}>В планах:</p>
-        {loading ? (
-          <CircularProgress size={20} />
-        ) : (
-          <p className={styles.balanceCountNumber}>1000р</p>
-        )}
-      </div>
-    </div>
+    <StatCard
+      title="В планах"
+      value={formatMoney(plane.amount)}
+      caption={plane.title}
+      icon={<EventNoteRounded fontSize="small" />}
+      accent="secondary"
+    />
   );
 };
 
-export default Balance;
+export default PlaneBalance;

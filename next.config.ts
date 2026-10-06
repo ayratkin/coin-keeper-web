@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Разрешаем открывать dev-сервер с устройств в локальной сети (например, с телефона)
+  allowedDevOrigins: ["192.168.*.*"],
 };
 
 export default nextConfig;

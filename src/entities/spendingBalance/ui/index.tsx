@@ -1,26 +1,24 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import styles from "./styles.module.css";
-import type { TBalanceResponse } from "../model";
-import { Card, CircularProgress } from "@mui/material";
+import TrendingDownRounded from "@mui/icons-material/TrendingDownRounded";
+import { formatMoney } from "@/shared/lib/format";
+import { StatCard } from "@/shared/ui";
 
-const Balance: React.FC = () => {
-  const [loading, setLoading] = useState(false);
-  const [balance, setBalance] = useState<string>("500");
+type TProps = {
+  amount: number;
+  caption?: string;
+};
 
+const SpendingBalance = ({ amount, caption }: TProps) => {
   return (
-    <div className={styles.balance}>
-      <div className={styles.balanceCount}>
-        <p className={styles.balanceCountTitle}>Расходы:</p>
-        {loading ? (
-          <CircularProgress size={20} />
-        ) : (
-          <p className={styles.balanceCountNumber}>100р</p>
-        )}
-      </div>
-    </div>
+    <StatCard
+      title="Расходы"
+      value={formatMoney(amount)}
+      caption={caption}
+      icon={<TrendingDownRounded fontSize="small" />}
+      accent="error"
+    />
   );
 };
 
-export default Balance;
+export default SpendingBalance;
